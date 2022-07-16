@@ -29,11 +29,11 @@
             <td>{{ obj.time | formatTime}}</td>
             <td><a href="#" @click="del(obj.id)">删除</a></td>
           </tr>
-          <!-- <tr style="background-color: #EEE">
+          <tr style="background-color: #EEE">
               <td>统计:</td>
-              <td colspan="2">总价钱为: 0</td>
-              <td colspan="2">平均价: 0</td>
-          </tr> -->
+              <td colspan="2">总价钱为: {{getSum}}</td>
+              <td colspan="2">平均价: {{getSvg}}</td>
+          </tr>
         </tbody>
           
         <tfoot v-if="list.length == 0">>
@@ -125,6 +125,17 @@ export default {
   filters: {
     formatTime:(val) => {
       return moment(val).format("YYYY-MM-DD")
+    }
+  },
+  computed: {
+    getSum() {
+      return this.list.reduce((sum,next) => {
+        sum = sum + next.price
+        return sum
+      },0)
+    },
+    getSvg() {
+      return this.getSum / (this.list.length || 1)    
     }
   }
 };
