@@ -101,12 +101,12 @@ export default {
           first_name: "\u5b9a\u5236",
         },
       ],
-      isActive:0
+      isActive: 0
     };
   },
   methods: {
-    btn(index) {
-      this.isActive = index
+    btn(val) {
+      this.isActive = val
     }
   }
 };
