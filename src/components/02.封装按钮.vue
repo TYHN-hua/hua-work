@@ -1,6 +1,6 @@
 <template>
   <div>
-    <myButton title="按钮" type="primary" @click1="fn"></myButton>
+    <myButton title="按钮" type="primary"></myButton>
     <myButton title="按钮" type="success"></myButton>
     <myButton title="按钮" type="warning"></myButton>
     <myButton title="按钮" type="danger"></myButton>
@@ -17,10 +17,5 @@ export default {
   components: {
     myButton,
   },
-  methods: {
-    fn() {
-      console.log('fnnnn');
-    }
-  }
 };
 </script>

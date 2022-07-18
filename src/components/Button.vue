@@ -1,72 +1,48 @@
 <template>
-  <button
-    ref="btn"
-    @click="$emit('click')"
-    @hover="$emit('hover')"
-    :type="type"
-    :class="['btn', type]"
-  >
-    <slot />
-  </button>
+  <button :class="`one-button-${type}`" @click="btnFn">{{title}}</button>
 </template>
 
 <script>
 export default {
-  props: ["type"],
-  mounted() {},
-};
+    props: {
+        title:String,
+        type: {
+            type: String,
+            default:"primary",
+            // 限制，只能是以下数组里的字段
+            Validator: (val) => {
+              //val type 传递进来的值
+              return ['primary','success','warning','danger'].includes(val)
+            }
+        }
+    },
+    methods: {
+      btnFn() {
+        this.$emit("click1")
+      }
+    }
+}
 </script>
 
-<style scoped lang="less">
-.btn {
-  display: inline-block;
-  line-height: 1;
-  white-space: nowrap;
-  cursor: pointer;
-  background: #fff;
-  border: 1px solid #dcdfe6;
-  color: #606266;
-  -webkit-appearance: none;
-  text-align: center;
-  box-sizing: border-box;
+<style scoped>
+button {
+  color: #fff;
   outline: none;
-  margin: 0;
-  transition: 0.1s;
-  font-weight: 500;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  padding: 12px 20px;
-  font-size: 14px;
+  border: none;
+  padding: 8px 24px;
   border-radius: 4px;
-  &.primary {
-    color: #fff;
-    background-color: #409eff;
-    border-color: #409eff;
-  }
-  &.success {
-    color: #fff;
-    background-color: #67c23a;
-    border-color: #67c23a;
-  }
-  &.info {
-    color: #fff;
-    background-color: #909399;
-    border-color: #909399;
-  }
-  &.warning {
-    color: #fff;
-    background-color: #e6a23c;
-    border-color: #e6a23c;
-  }
-  &:focus {
-    border: none;
-    box-shadow: none;
-  }
-  &.danger {
-    color: #fff;
-    background-color: #f56c6c;
-    border-color: #f56c6c;
-  }
+  font-size: 18px;
+}
+.one-button-primary {
+  background-color: skyblue;
+}
+.one-button-success {
+  background-color: hotpink;
+}
+.one-button-warning {
+  background-color: yellow;
+}
+.one-button-danger {
+  background-color: red;
 }
 </style>

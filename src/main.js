@@ -6,8 +6,8 @@ Vue.config.productionTip = false
 import "bootstrap/dist/css/bootstrap.css"
 
 //注册全局组件
-import Pannel from "./components/Pannel"
-Vue.component("Pannel",Pannel)
+// import Pannel from "./components/Pannel"
+// Vue.component("Pannel",Pannel)
 
 
 //注册全局的过滤器
