@@ -1,5 +1,5 @@
 <template>
-  <router-view></router-view>
+  <div>选房</div>
 </template>
 
 <script>
