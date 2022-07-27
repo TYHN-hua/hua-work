@@ -9,7 +9,12 @@
     </van-row>
     <p class="title">最新音乐</p>
     <van-cell-group>
-    <van-cell center 
+      <SongItem v-for="item in newlist"
+     :key="item.id"
+     :name="item.name"
+     :author="item.song.artists[0].name"
+     :id="item.id"></SongItem>
+    <!-- <van-cell center 
     :title="item.name" 
     :label="`${item.song &&
      item.song.artists[0] &&
@@ -20,12 +25,12 @@
       <template #right-icon>
         <van-icon name="play-circle-o" size="0.6rem" />
       </template>
-    </van-cell>
+    </van-cell> -->
     </van-cell-group>
   </div>
 </template>
-
 <script>
+import SongItem from "../../components/SongItem"
 import { recommendSongListApi,newSongListApi} from "@/api"
 export default {
     name:'layOut',
@@ -59,6 +64,9 @@ export default {
             }
         }
     },
+    components: {
+      SongItem,
+    }
 }
 </script>
 

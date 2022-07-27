@@ -7,7 +7,7 @@ import './assets/flexible'
 
 import router from "@/router/index"
 
-import { Tabbar, TabbarItem ,NavBar,Col,Search,Cell,CellGroup,Icon, Row, Image as VanImage} from 'vant';
+import { Tabbar, TabbarItem ,NavBar,Col,List,Search,Cell,CellGroup,Icon, Row, Image as VanImage} from 'vant';
 Vue.use(Tabbar)
 Vue.use(TabbarItem)
 Vue.use(NavBar)
@@ -18,6 +18,7 @@ Vue.use(Cell)
 Vue.use(Icon)
 Vue.use(CellGroup)
 Vue.use(Search)
+Vue.use(List)
 
 
 Vue.config.productionTip = false
