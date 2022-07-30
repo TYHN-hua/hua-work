@@ -3,6 +3,7 @@ import App from './App.vue'
 
 import './assets/reset.css'
 import './assets/flexible'
+import './assets/font/iconfont.css'
 
 import router from "@/router/index"
 

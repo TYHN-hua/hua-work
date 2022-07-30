@@ -96,7 +96,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .my-swipe {
   height: 200px;
 }
@@ -166,7 +166,5 @@ export default {
 .hk-search {
   position: relative;
 }
-.van-col {
-  margin-bottom: 20px;
-}
+
 </style>

@@ -6,7 +6,8 @@ import Home from "@/views/Home"
 import Search from "@/views/Search"
 import Message from "@/views/Message"
 import My from "@/views/My"
-
+import Login from "@/views/Login"
+import Regist from "@/views/Regist"
 Vue.use(VueRouter)
 const routes = [
     {
@@ -36,6 +37,14 @@ const routes = [
             },
         ]
     },
+    {
+        path: '/login',
+        component:Login,
+    },
+    {
+        path: '/regist',
+        component:Regist,
+    }
     
 ]
 // export default new VueRouter({ routes })
